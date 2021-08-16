@@ -33,7 +33,7 @@ body {
     margin:auto;
     position:relative;
     text-align:center;
-    
+
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -109,7 +109,7 @@ body {
         background-color:#c0392b;
       }
     }
-    
+
     .time-left {
       top:32%;
       left:50%;
