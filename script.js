@@ -1,5 +1,10 @@
 var completed = 0;
+
+var audioPausa = new Audio('pausa.mp3');
+var audioVoltar = new Audio('voltar.mp3');
+
 $(document).ready(function () {
+
     var sessionLength = 25,
         breakLength = 5,
         isSession = true,
@@ -26,7 +31,7 @@ $(document).ready(function () {
                 $fillAnimationBreak.stop();
             isPaused = true;
             clearInterval(intervalCounter);
-            $('.status').text('Click to Start');
+            $('.status').text('Clique Para Começar');
         },
         nextStep = function () {
             if (isSession) {
@@ -43,6 +48,7 @@ $(document).ready(function () {
                 isSession = false;
 
                 completed++;
+                audioPausa.play();
                 $('.completed').text('');
 
                 if (completed > 3){
@@ -61,8 +67,12 @@ $(document).ready(function () {
                 $('.fill.break').animate({
                     height: '0%'
                 }, 500);
+
+                audioVoltar.play();
+
                 isSession = true;
                 timeLeft = sessionLength * 60;
+
                 $fillAnimationSess = $('.fill.session').animate({
                     height: '100%'
                 }, (timeLeft * 1000));
@@ -79,7 +89,7 @@ $(document).ready(function () {
             isPaused = false;
             isSession = !isSession;
             nextStep();
-            $('.status').text('Click to Stop');
+            $('.status').text('Clique Para Pausar');
         };
     $('.pomodoro>.time-left').text(getFormatedTime());
     $('.reset-pomodoro').on('click', function () {

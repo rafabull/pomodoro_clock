@@ -53,7 +53,7 @@ body {
 }
 
 .description {
-    font-size: 15rem;
+    font-size: 20rem;
 }
 
 .value {
@@ -103,7 +103,7 @@ body {
 }
 
 .next-pomodoro span, .reset-pomodoro span{
-    font-size: 15rem !important;
+    font-size: 20rem !important;
 }
 
 .pomodoro {
